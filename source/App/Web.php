@@ -9,6 +9,7 @@ use Source\DataBaseClass\cliente;
 use CoffeeCode\Router\Router;
 use Source\DataBaseClass\pedidos;
 
+
 class Web
 {
     public function __construct()
@@ -20,63 +21,6 @@ class Web
     {
         $router = new Router(URL_BASE);
         $router->redirect($Link);
-    }
-
-    public function login($data)
-    {
-        if(isset($_SESSION["LOGADO"]) and $_SESSION["LOGADO"] == TOKEN)
-        {
-            $this->to('/home');    
-        }
-        if(isset($data["erro"]))
-        {
-            echo "<div class=\"Error\"><small>".$data["erro"]."</small></div> ";
-            $data = null;
-        }
-        require (dirname(1)."/views/login.php");
-    }
-
-    public function logar($data)
-    {
-       
-        if(isset($_SESSION["LOGADO"]) and $_SESSION["LOGADO"] == TOKEN)
-        {
-            $this->to('/home');    
-        }
-        if(!empty($data))
-        {
-            try
-            {
-                $Con = new DbConnect();
-                $Con = $Con->ReturnCon();
-                $SQL = "select id from _login where user = ? and password = ?";
-                $query = $Con->prepare($SQL);
-                $query->bindValue(1, $data["User"]);
-                $query->bindValue(2, md5($data["Password"]));
-                $query->execute();
-                if($query->rowCount() > 0)
-                {
-                    $_SESSION["LOGADO"] = TOKEN;
-                    header("Location: ./home");
-                    die();
-                }
-                else
-                {
-                    $data = ["erro" => "Usuario ou Senha não encontrado."];
-                    $this->login($data);
-                }
-            }
-            catch(PDOException $e)
-            {
-                $data = ["erro" => $e->getMessage()];
-                $this->login($data);
-            }
-        }
-        else
-        {
-            $data = ["erro" => "Preencha os dados"];
-            $this->login($data);
-        }
     }
 
     public function home($data)

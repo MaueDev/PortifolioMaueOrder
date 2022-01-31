@@ -10,9 +10,9 @@ $router->namespace("Source\\App");
 $router->group(null);
 
 //LOGAR
-$router->get("/","Web:login");
-$router->post("/","Web:logar");
-
+$router->get("/","Auth:Login");
+$router->get("/logoff","Web:produtos");
+$router->post("/","Auth:Logar");
 //Home
 $router->get("/home","Web:home");
 
