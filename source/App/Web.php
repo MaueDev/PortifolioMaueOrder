@@ -31,59 +31,6 @@ class Web
         }
     }
 
-    public function produtos($data)
-    {
-        if(isset($_SESSION["LOGADO"]) and $_SESSION["LOGADO"] == TOKEN)
-        {
-            if(isset($data["SUCESS"]))
-            {
-                echo "<div class=\"SUCESS\" style=\"margin-top:70px\"><small>".$data["SUCESS"]."</small></div> ";
-                $data = "";
-            }
-            $Produtos = new produtos;
-            $allProdutos = $Produtos->all();
-            require (dirname(1)."/views/produtos.php");
-        }
-    }
-
-    public function produtoscriar($data)
-    {
-        if(isset($_SESSION["LOGADO"]) and $_SESSION["LOGADO"] == TOKEN)
-        {   
-            //Caso Ocorrer Erro
-            if(isset($data["ERRO"]))
-            {
-                echo "<div class=\"Error\" style=\"margin-top:70px\"><small>".$data["ERRO"]."</small></div> ";
-                $data = "";
-            }
-
-
-            require (dirname(1)."/views/produtoscriar.php");
-        }
-    }
-
-    public function sendprodutos($data)
-    {
-        if(isset($_SESSION["LOGADO"]) and $_SESSION["LOGADO"] == TOKEN)
-        { 
-            if(!empty($data))
-            {
-                
-                $Produtos = new produtos;
-                $allProdutos = $Produtos->create($data["nome"],$data["vr_produto"]);
-                if(!isset($allProdutos["ERRO"]) and isset($allProdutos['SUCESS']))
-                {
-                    
-                    $this->to("/produtos");
-                }
-                else
-                {
-                   $this->produtoscriar($allProdutos); 
-                }
-            }
-        }
-    }
-
     public function clientes($data)
     {
         if (isset($_SESSION["LOGADO"]) and $_SESSION["LOGADO"] == TOKEN) 

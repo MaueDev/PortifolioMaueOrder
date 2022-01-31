@@ -10,16 +10,17 @@ $router->namespace("Source\\App");
 $router->group(null);
 
 //LOGAR
-$router->get("/","Auth:Login");
-$router->get("/logoff","Web:produtos");
 $router->post("/","Auth:Logar");
+$router->get("/","Auth:Login");
+$router->get("/sair","Auth:Logoff");
+
 //Home
 $router->get("/home","Web:home");
 
 //PRODUTOS
-$router->get("/produtos","Web:produtos");
-$router->get("/produtos/criar","Web:produtoscriar");
-$router->post("/produtos/criar","Web:sendprodutos");
+$router->get("/produtos","Produto:Produtos");
+$router->get("/produtos/criar","Produto:ProdutosCriar");
+$router->post("/produtos/criar","Produto:SendProdutos");
 
 //CLIENTES
 $router->get("/clientes/{id}","Web:buscarclientes");
