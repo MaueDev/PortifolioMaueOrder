@@ -8,7 +8,7 @@ define("TOKEN", md5(date("Y-d-M")));
 class DbConnect
 {
     private $username = "seuusuariodb";
-    private $password = "suasenhadb";
+    private $password = "suasenha";
     private $Con;
     public function __construct()
     {
