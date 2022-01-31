@@ -34,11 +34,11 @@
                     <tr>
                         <form action="" method="POST">
                         <th colSpan="2">
-                            <input type="hidden" id="IdProdutoAdicionar" name="idProduto"/>
-                            <input type="text" id="ProdutoName" required/>
+                            <input type="hidden" id="IdProdutoAdicionar" name="idProduto" required/>
+                            <input type="text" placeholder="Nome Produto" id="ProdutoName" required readonly/>
                         </th>
                         <th colSpan="1">
-                            <input type="number" placeholder="Quantidade" name="qtdProduto" required/>
+                            <input type="number" placeholder="Quantidade" value="1" name="qtdProduto" required/>
                         </th>
                         <th colSpan="1">
                             <input type="submit" value="Adicionar" class="btn"/>
@@ -85,7 +85,7 @@
                     </tr>
                     <tr>
                         <th colSpan="3">
-                            <input type="text" id="ProdutoSearch" onkeyup="filterFunction('ProdutoSearch','ProdutosSearch','tr')"/>
+                            <input type="text" id="ProdutoSearch" placeholder="Buscar Produto" onkeyup="filterFunction('ProdutoSearch','ProdutosSearch','tr')"/>
                         </th>
                     </tr>
                         <tr class="TrClick">

@@ -259,7 +259,7 @@ class Web
                     $this->aguardopedido($data);
                 }
             }
-            elseif(isset($data['idProduto']))
+            elseif(isset($data['idProduto']) and $data['idProduto'] != null and !empty($data['idProduto']))
             {
                 $Pedido = $Pedido->SetProduto($data['idProduto'],$data["id"],$data["qtdProduto"]);
                 if($Pedido)
@@ -267,7 +267,7 @@ class Web
                     $this->aguardopedido($data);
                 }
             }
-            elseif($data['FinalizarVenda'])
+            elseif(isset($data['FinalizarVenda']))
             {
                 $Pedido = $Pedido->FinalizeOrder($data['id']);
                 if($Pedido)
@@ -275,6 +275,10 @@ class Web
                     
                     $this->to("/historico");
                 }
+            }
+            else
+            {
+                $this->aguardopedido($data);
             }
         }
     }
