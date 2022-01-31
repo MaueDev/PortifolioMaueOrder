@@ -140,7 +140,6 @@ class pedidos extends DbConnect
                     $Produtos = $this->FindMovProd($idVenda);
                     $Pedidos['Produtos'] = $Produtos;
                     $Pedido[] = $Pedidos;
-                    var_dump($ValorPedido);
                     return true;
                 }
                 else
