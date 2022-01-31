@@ -14,25 +14,21 @@
         <ul>
             <li class="itemMenu">
                 <a href="<?php echo URL_BASE; ?>/produtos"> 
-                    <AiFillCreditCard/>
                     <label>Produtos</label>
                 </a>
             </li>
             <li class="itemMenu">
                 <a href="<?php echo URL_BASE; ?>/clientes"> 
-                    <AiFillGolden/>
                     <label>Clientes</label>
                 </a>
             </li>
             <li class="itemMenu">
-                <a href="<?php echo URL_BASE; ?>/.newpedido"> 
-                    <AiFillShop/>
+                <a href="<?php echo URL_BASE; ?>/newpedido"> 
                     <label>Novo Pedido</label>
                 </a>
             </li>
             <li class="itemMenu">
                 <a href="<?php echo URL_BASE; ?>/historico"> 
-                    <AiFillReconciliation/>
                     <label>Historico Pedido</label>
                 </a>
             </li>
