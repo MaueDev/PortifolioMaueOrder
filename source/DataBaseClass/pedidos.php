@@ -114,7 +114,7 @@ class pedidos extends DbConnect
 
     public function SetProduto($idProduto,$idVenda,$qtdProduto)
     {
-        if(isset($idProduto) and isset($idVenda) and isset($qtdProduto))
+        if(isset($idProduto) and isset($idVenda) and isset($qtdProduto) and $idProduto != null)
         {
             //Buscar dados do produto para completo
             $Produto = new produtos();
