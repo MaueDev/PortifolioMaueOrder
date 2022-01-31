@@ -28,8 +28,7 @@
         
     </div>
     <div class="Modalfooter">
-        <button  class="btn red w-2" style="margin: 0 10px 0 10px;">Cancelar</button>
-        <button  class="btn green w-2" style="margin: 0 10px 0 10px;" type="submit">Cadastrar </button>
+        <button type="submit" class="btn green w-2" style="margin: 0 10px 0 10px;" type="submit">Cadastrar </button>
     </div>
     </form>
 </div>
