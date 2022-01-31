@@ -16,8 +16,9 @@
   * Fazer Footer
   * Adicionar variavel das cores no css;
 * Requisição
-  * Alterar as requisição para AJAX ou FETCH em JavaScript
-
-
+  * Alterar as requisição para AJAX ou FETCH em * JavaScript
+* Configurar Redirect
+  * Configurar Redirect no controller
+  * Configurar mensagem de erro
 
 
