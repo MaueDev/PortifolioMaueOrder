@@ -1,0 +1,8 @@
+@import url("./produtos.css");
+body 
+{
+  margin: 0;
+  color: #212529;
+  background-color: #0c0809b4;
+  display: block;
+}

@@ -1,0 +1,92 @@
+@import url("./header.css");
+
+body 
+{
+  margin: 0;
+  color: #212529;
+  background-color: #0c0809b4;
+  display: block;
+}
+
+.MenuPrincipalContent
+{
+  margin-top: 80px;
+}
+
+.itemMenuPrincipal
+{
+  height: auto;
+  margin: 10px;
+  background-color: #F8F9FA;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.761) 0px 3px 8px;
+  border: 0.05px solid rgba(0, 0, 0, 0.761);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.itemMenuPrincipal ul 
+{
+  margin: 10px;
+  padding: 0px;
+  
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.itemMenuPrincipal li
+{
+    flex: 1;
+    height: 49%;
+    min-width: 49%;
+    min-height: 100px;
+    max-height: 220px;
+    background-color: #21252925;
+}
+  
+.itemMenuPrincipal li
+{
+  width: 100%;
+  color: #3b3b3c;
+  text-decoration: none;
+  font-family: sans-serif;
+  font-size: 2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 3px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.itemMenuPrincipal a
+{
+  padding: 5px;
+  color: #3b3b3c;
+  width: 100%;
+  height: 100%;
+}
+
+.itemMenuPrincipal li:hover 
+{
+    background: #21252917 !important;
+    cursor: pointer;
+    
+}
+
+.itemMenuPrincipal ul a:hover,.itemMenuPrincipal label:hover
+{
+    background: transparent;
+    cursor: pointer;
+}
+

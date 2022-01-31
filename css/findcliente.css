@@ -1,0 +1,31 @@
+@import url("./produtos.css");
+
+.ConteinerFinCliente
+{
+    margin-top: 80px;
+    width: 100%;
+    background-color: #F8F9FA;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.761) 0px 3px 8px;
+    border: 0.05px solid rgba(0, 0, 0, 0.761);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.date
+{
+    width: 100%;
+    display: f;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    margin-top: 1%;
+}
+table
+{
+    width: 98%;
+    margin: 0;
+}

@@ -1,0 +1,76 @@
+.btn
+{
+    height: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    padding: 5px;
+}
+
+.font-1
+{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 1000;
+    text-transform: uppercase;
+}
+
+.white
+{
+    background-color: #fff;
+    border: 0.05px solid #fff;
+    border-radius: 5px;
+}
+
+.red
+{
+    background-color: #ed233d;
+    border: 0.05px solid #ed233d;
+    border-radius: 5px;
+    color: #fff;
+}
+
+.green
+{
+    background-color: #008000;
+    border: 0.05px solid #008000;
+    border-radius: 5px;
+    color: #fff;
+}
+
+.btnIconWhite
+{
+    color: white;
+    background:transparent;
+    border: none;
+    font-size: 30px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.BtnLeft
+{
+    margin-left: auto;
+    padding-right: 5px;
+}
+
+.w-2
+{
+    width: 50%;
+}
+
+.w-1
+{
+    width: 100%;
+}
+
+.h-1
+{
+    height: 100%;
+    width: 90%;
+}

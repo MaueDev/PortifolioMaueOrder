@@ -1,0 +1,150 @@
+body,
+ul {
+  margin: 0px;
+  padding: 0px;
+}
+
+a{
+    text-decoration: none;
+    font-family: sans-serif;
+    color: black !important;
+ 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+ul a:hover
+{
+    background: rgba(0,0,0, 0.05);
+}
+
+#logo
+{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+
+#header
+{
+    height: 70px;
+    width: 100%;
+    padding: 1rem;
+    position: fixed;
+    top: 0;
+    z-index: 10001;
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    box-sizing: border-box;
+    background-color: #F8F9FA;
+    box-shadow: rgba(0, 0, 0, 0.761) 0px 3px 8px;
+    border: 0.05px solid rgba(0, 0, 0, 0.761);
+}
+
+#header a
+{
+    color: black !important
+
+}
+
+#menu {
+    display: flex;
+    list-style: none;
+    gap: 0.5rem;
+    margin: 0 !important;
+  }
+
+#menu a
+{
+    padding: 0.5rem;
+}
+
+#menu svg
+{
+    padding-left: 5px;
+}
+
+#btn-mobile
+{
+    display: none;
+    color: black !important
+}
+
+.ActiveBtnMenu
+{
+    color: black !important
+}
+
+@media(max-width:708px)
+{
+    #menu 
+    {
+    display: block;
+    position: absolute;
+    width: 100%;
+    top: 70px;
+    right: 0px;
+    background: #F8F9FA;
+    transition: 0.6s;
+    z-index: 1000;
+    height: 0px;
+    visibility: hidden;
+    overflow-y: hidden;
+    }
+
+    #nav.active #menu {
+    height: calc(100vh - 70px);
+    visibility: visible;
+    overflow-y: auto;
+    }
+
+    #menu a {
+    padding: 1rem 0;
+    margin: 0 1rem;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.05);
+    }
+
+    #btn-mobile {
+    display: flex;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border: none;
+    background: none;
+    cursor: pointer;
+    gap: 0.5rem;
+    }
+
+    #hamburger {
+    border-top: 2px solid;
+    width: 20px;
+    }
+
+    #hamburger::after,
+    #hamburger::before {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: currentColor;
+    margin-top: 5px;
+    transition: 0.3s;
+    position: relative;
+    }
+
+    #nav.active #hamburger {
+    border-top-color: transparent;
+    }
+
+    #nav.active #hamburger::before {
+    transform: rotate(135deg);
+    }
+
+    #nav.active #hamburger::after {
+    transform: rotate(-135deg);
+    top: -7px;
+    }
+}

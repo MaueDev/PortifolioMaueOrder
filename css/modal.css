@@ -1,0 +1,80 @@
+
+
+/*Modal*/
+
+.ModalContent
+{
+    
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.761) 0px 3px 8px;
+
+    
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 80px;
+    width: 60%;
+    height: 300px;
+}
+
+.Modalheader
+{
+    display: flex;
+    
+    align-items: center;
+    width: 100%;
+    height: 10%;
+
+    border-bottom: 0.05px solid #cecece ;
+    border-radius: 10px 10px 0 0 ;
+    background-color: #1c1b1b;
+    box-shadow: rgba(0, 0, 0, 0.035) 0px 3px 8px;
+    color:#F8F9FA;
+
+    font-size: 1rem;
+    font-weight: bold;
+    font-family: sans-serif;
+    
+    
+}
+.Modalheader Label
+{
+    padding-left: 35px;
+    width: 100%;
+    text-align: center;
+}
+
+.Modalfooter
+{
+    display: flex;
+    justify-content: space-around;
+    gap: 5px;
+    width: 100%;
+    height: 10%;
+
+    background: transparent;
+    border-radius: 0 0 10px 10px;
+    box-shadow: rgba(0, 0, 0, 0.035) 0px 3px 8px;
+    color:#F8F9FA;
+}
+
+.Modalbody
+{
+    width: 99%;
+    height: 77%;
+    background-color: #F8F9FA;
+
+    display: flex;
+   justify-content: center;
+   align-items: center;
+    
+}
+
+.FormProdutos
+{
+    width: 100%;
+    height: 100%;
+}

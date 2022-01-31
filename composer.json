@@ -1,0 +1,20 @@
+{
+    "name": "mauricio/maue-order",
+    "require": {
+        "coffeecode/router": "^1.0"
+    },
+    "authors": [
+        {
+            "name": "MaueDev",
+            "email": "mauricio.rsc.mg@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Source\\": "source/"
+        },
+        "files": [
+            "source/Config.php"
+        ]
+    }
+}
