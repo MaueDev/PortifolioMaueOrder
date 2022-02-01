@@ -164,9 +164,10 @@ class pedidos extends DbConnect
         {
             try
             {
-                $SQL = "UPDATE _cad_Pedidos SET Status = 1 WHERE id = ?";
+                $SQL = "UPDATE _cad_Pedidos SET Status = 1, DataConclusao = ? WHERE id = ?";
                 $Query = $this->ReturnCon()->prepare($SQL);
-                $Query->bindValue(1, $idVenda);
+                $Query->bindValue(1, $this->DataCurrent());
+                $Query->bindValue(2, $idVenda);
                 if($Query->execute())
                 {
                     return true;

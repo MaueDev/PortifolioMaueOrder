@@ -28,7 +28,7 @@
                             
                         </th>
                         <th>
-                            <button class="btn btnIniciarVenda" id="ClienteBtn"> Cliente </button>
+                            <button class="btn btnVenda w-1" id="ClienteBtn"> Cliente </button>
                         </th>
                     </tr>
                     <tr>
@@ -70,7 +70,7 @@
                         <th>Valor: R$ <?php echo $Pedido[0]['VrPedido']; ?></th>
                         <th></th>
                         <th></th>
-                        <th><form action="" method="POST"><button type="submit" name="FinalizarVenda" value="true" class="btn green btnIniciarVenda"/>Concluir Venda</form></th>
+                        <th><form action="" method="POST"><button type="submit" name="FinalizarVenda" value="true" class="btn green btnVenda w-1"/>Concluir Venda</form></th>
                     </tr>
                 </tfoot>
             </table>
@@ -111,7 +111,7 @@
             <input type="text" placeholder="Pesquisar Cliente" id="SearchCliente" onkeyup="filterFunction('SearchCliente','ClienteContainer','button')">
             <div class="ClienteContainer" id="ClienteContainer">
                 <?php while($Cliente = $Clientes->fetch(PDO::FETCH_ASSOC)){ ?>
-                <form action="" method="POST"><button type="submit" class="BtnList" name="cliente" value="<?php echo $Cliente["id"] ?>"><?php echo $Cliente["Nome"] ?></button></form>
+                <form action="" method="POST"><button type="submit" class="BtnList " name="cliente" value="<?php echo $Cliente["id"] ?>"><?php echo $Cliente["Nome"] ?></button></form>
                 <?php } ?>
             </div>
         </div>
