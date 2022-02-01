@@ -5,9 +5,6 @@
 &nbsp; 
 ## To do List
 
-* Nome de arquivo e Variaveis
-  * Alterar variaveis para cameloCase 
-  * Alterar nome de arquivos, principalmente os views 
 * Separar as classes
   * Separar e desentralizar as classe do controller
 
