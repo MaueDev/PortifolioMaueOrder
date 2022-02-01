@@ -41,25 +41,25 @@ class produtos extends DbConnect{
                 $Query->bindValue(2, $VrProduto);
                 if($Query->execute())
                 {
-                    return ["SUCESS" => "Criado Produto ".$Nome." com sucesso"];
+                    return ["SUCCESS" => "Criado Produto ".$Nome." com sucesso"];
                 }
                 else
                 {
              
-                    return ['ERRO' =>  "Não foi possivel adicionar o Produto"];
+                    return ['ERROR' =>  "Não foi possivel adicionar o Produto"];
                  
                 }
     
             }
             catch(PDOException $e)
             {
-                return ['ERRO' => $e->getMessage()];
+                return ['ERROR' => $e->getMessage()];
             }
 
         }
         else
         {
-            return ['ERRO' => "Está faltando parametros"];
+            return ['ERROR' => "Está faltando parametros"];
         }
     }
 

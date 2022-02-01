@@ -12,11 +12,8 @@ class Web
     public function __construct()
     {
         session_start();
-        //Verificar se está logado
-        if (!isset($_SESSION["LOGADO"]) and !$_SESSION["LOGADO"] == TOKEN) 
-        {
-            if(session_destroy()){$this->to("/");}
-        }
+        require(__DIR__."/Helpers/Validations.php");
+        IsNotLoggedIn();//Verifica se já está logado
     }
 
     public function to($Link)
@@ -26,21 +23,15 @@ class Web
     }
     public function home($data)
     {
-        if(isset($_SESSION["LOGADO"]) and $_SESSION["LOGADO"] == TOKEN)
-        {
-            require (dirname(1)."/views/home.views.php");
-        }
+        $STATUS = ErrorOrSuccess($data);
+        require (dirname(1)."/views/home.views.php");
     }
 
     /*Produtos */
 
     public function Produtos($data)
     {
-        if(isset($data["SUCESS"]))
-        {
-            echo "<div class=\"SUCESS\" style=\"margin-top:70px\"><small>".$data["SUCESS"]."</small></div> ";
-            $data = "";
-        }
+        $STATUS = ErrorOrSuccess($data);
         $Produtos = new produtos;
         $allProdutos = $Produtos->all();
         require (dirname(1)."/views/produtos..views.php");
@@ -48,12 +39,7 @@ class Web
 
     public function ProdutosCriar($data)
     { 
-        //Caso Ocorrer Erro
-        if(isset($data["ERRO"]))
-        {
-            echo "<div class=\"Error\" style=\"margin-top:70px\"><small>".$data["ERRO"]."</small></div> ";
-            $data = "";
-        }
+        $STATUS = ErrorOrSuccess($data);
         require (dirname(1)."/views/produtoscriar.views.php");
     }
 
@@ -63,7 +49,7 @@ class Web
         {
             $Produtos = new produtos;
             $allProdutos = $Produtos->create($data["nome"],$data["vr_produto"]);
-            if(!isset($allProdutos["ERRO"]) and isset($allProdutos['SUCESS']))
+            if(!isset($allProdutos["ERROR"]) and isset($allProdutos['SUCCESS']))
             {
                 $this->to("/produtos");
             }
@@ -87,11 +73,13 @@ class Web
     {
         $FindCliente = new cliente;
         $Cliente = $FindCliente->FindCliente($data["id"]);
+        $STATUS = ErrorOrSuccess($Cliente);
         require (dirname(1)."/views/buscarclientes.views.php");
     }
 
     public function CriarClientes($data)
     {
+        $STATUS = ErrorOrSuccess($data);
         require (dirname(1)."/views/createCliente.views.php");
     }
 
@@ -103,18 +91,18 @@ class Web
             $NewCliente = $Cliente->create($data);
             if(isset($NewCliente["ERROR"]) and !isset($NewCliente['SUCESS']))
             {
-                echo "<div class=\"Error\" style=\"margin-top:70px\"><small>".$NewCliente["ERROR"]."</small></div> ";
+                $STATUS = ErrorOrSuccess($NewCliente);
                 $this->criarclientes($data);
             }
             elseif(!isset($NewCliente["ERROR"]) and isset($NewCliente['SUCESS']))
             {
-                echo "<div class=\"SUCESS\" style=\"margin-top:70px\"><small>".$NewCliente['SUCESS']."</small></div> ";
+                $STATUS = ErrorOrSuccess($NewCliente);
                 $this->to("/clientes");
             }
         }
         else
         {
-            echo "<div class=\"Error\" style=\"margin-top:70px\"><small>Preencha os Campos</small></div> ";
+            $STATUS = ErrorOrSuccess($data);
             $this->criarclientes($data);
         }
     }
@@ -151,6 +139,7 @@ class Web
             /*Buscar Cliente */
             $Clientes = new cliente;
             $Clientes = $Clientes->all();
+            $STATUS = ErrorOrSuccess($data);
             require (dirname(1)."/views/pedidoiniciada.views.php");
         }
         else
@@ -195,16 +184,7 @@ class Web
     public function Historico($data)
     {
         //Caso Ocorrer Erro
-        if(isset($data["ERRO"]))
-        {
-            echo "<div class=\"Error\" style=\"margin-top:70px\"><small>".$data["ERRO"]."</small></div> ";
-            $data = "";
-        }
-        if(isset($data["SUCESS"]))
-        {
-            echo "<div class=\"SUCESS\" style=\"margin-top:70px\"><small>".$data["SUCESS"]."</small></div> ";
-            $data = "";
-        }
+        $STATUS = ErrorOrSuccess($data);
         $Pedido = new pedidos;
         $Pedido = $Pedido->all();
         require (dirname(1)."/views/historicovenda.views.php");

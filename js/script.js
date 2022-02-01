@@ -1,5 +1,15 @@
 let ClienteBtn = document.getElementById("ClienteBtn");
+let BtnMenu = document.getElementById("btn-mobile");
 
+BtnMenu.addEventListener('click', function(e)
+{
+  if(e.type === 'touchstart') e.preventDefault();
+  const nav = document.getElementById('nav');
+  nav.classList.toggle('active');
+  const active = nav.classList.contains('active');
+  e.currentTarget.setAttribute('aria-expanded', active)
+  
+})
 ClienteBtn.addEventListener('click',function()
 {
     let Modal = document.getElementById('ListClienteModal');
@@ -39,3 +49,4 @@ function filterFunction(inputserch,containerprod,tags) {
     }
   }
 }
+

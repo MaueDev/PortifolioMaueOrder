@@ -28,7 +28,7 @@ class pedidos extends DbConnect
         }
         catch(PDOException $e)
         {
-            return false;
+            return ['ERROR' => $e->getMessage()];
         }
     }
 
@@ -56,9 +56,7 @@ class pedidos extends DbConnect
         }
         catch(PDOException $e)
         {
-            http_response_code(505);
-            echo json_encode(array('status' => 'ERROR', 'ERRO' => $e->getMessage()), JSON_UNESCAPED_UNICODE);
-            die();
+            return ['ERROR' => $e->getMessage()];
         }
     }
 
@@ -76,9 +74,7 @@ class pedidos extends DbConnect
         }
         catch(PDOException $e)
         {
-            http_response_code(505);
-            echo 'ERRO: '.$e->getMessage();
-            die();
+             return ['ERROR' => $e->getMessage()];
         }
     }
 
@@ -249,9 +245,7 @@ class pedidos extends DbConnect
         }
         catch(PDOException $e)
         {
-            http_response_code(505);
-            echo json_encode(array('status' => 'ERROR', 'ERRO' => $e->getMessage()), JSON_UNESCAPED_UNICODE);
-            die();
+            return ['ERROR' => $e->getMessage()];
         }
     }
 
@@ -270,9 +264,7 @@ class pedidos extends DbConnect
         }
         catch(PDOException $e)
         {
-            http_response_code(505);
-            echo json_encode(array('status' => 'ERROR', 'ERRO' => $e->getMessage()), JSON_UNESCAPED_UNICODE);
-            die();
+            return ['ERROR' => $e->getMessage()];
         }
     }
 
@@ -296,9 +288,7 @@ class pedidos extends DbConnect
         }
         catch(PDOException $e)
         {
-            http_response_code(505);
-            echo json_encode(array('status' => 'ERROR', 'ERRO' => $e->getMessage()), JSON_UNESCAPED_UNICODE);
-            die();
+            return false;
         }
 
     }

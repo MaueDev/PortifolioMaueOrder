@@ -15,7 +15,6 @@
 * Requisição
   * Alterar as requisição para AJAX ou FETCH em * JavaScript
 * Configurar Redirect
-  * Configurar Redirect no controller
   * Configurar mensagem de erro
 
 

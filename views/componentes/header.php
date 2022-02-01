@@ -12,4 +12,6 @@
             <li><a href="<?php echo URL_BASE; ?>/sair">Sair</a></li>
         </ul>
     </nav>
+    
 </header>
+<div class="ErrorOrSuccess"><?php echo isset($STATUS)?$STATUS:null; ?></div>
