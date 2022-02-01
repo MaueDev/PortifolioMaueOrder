@@ -10,6 +10,8 @@ class Auth
     public function __construct()
     {
         session_start();
+        require(__DIR__."/Helpers/Validations.php");
+        IsLoggedIn("/home");//Verifica se já está logado
     }
 
     public function to($Link)
@@ -20,24 +22,12 @@ class Auth
 
     public function login($data)
     {
-        if(isset($_SESSION["LOGADO"]) and $_SESSION["LOGADO"] == TOKEN)
-        {
-            $this->to('/home');    
-        }
-        if(isset($data["erro"]))
-        {
-            echo "<div class=\"Error\"><small>".$data["erro"]."</small></div> ";
-            $data = null;
-        }
+        echo ErrorOrSuccess($data);
         require (dirname(1)."/views/login.views.php");
     }
 
     public function Logar($data)
     {
-        if(isset($_SESSION["LOGADO"]) and $_SESSION["LOGADO"] == TOKEN)
-        {
-            $this->to('/home');    
-        }
         if(!empty($data))
         {
             try
@@ -57,19 +47,19 @@ class Auth
                 }
                 else
                 {
-                    $data = ["erro" => "Usuario ou Senha não encontrado."];
+                    $data = ["ERROR" => "Usuario ou Senha não encontrado."];
                     $this->login($data);
                 }
             }
             catch(PDOException $e)
             {
-                $data = ["erro" => $e->getMessage()];
+                $data = ["ERROR" => $e->getMessage()];
                 $this->login($data);
             }
         }
         else
         {
-            $data = ["erro" => "Preencha os dados"];
+            $data = ["ERROR" => "Preencha os dados"];
             $this->login($data);
         }
     }
