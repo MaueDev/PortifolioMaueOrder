@@ -62,7 +62,7 @@
     height: 300px;
     display: block;
     overflow-y: scroll;
-    background-color: white;
+    background-color: #F8F9FA;
 }
 
 .produtospdv tbody
@@ -136,7 +136,7 @@
     z-index: 10005;
     overflow: hidden;
 
-    background-color: white;
+    background-color: #F8F9FA;
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.761) 0px 3px 8px;
     opacity: 1;
@@ -159,7 +159,7 @@
     font-size: 1rem;
     overflow: auto;
 	box-sizing: border-box;
-    color: white  !important;
+    color: #F8F9FA  !important;
     height: 45%;
 }
 
@@ -189,7 +189,7 @@
     width: 50%;
     min-height:250px ;
     padding: 5px;
-    background-color: white;
+    background-color: #F8F9FA;
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.761) 0px 3px 8px;
     

@@ -1,8 +1,64 @@
-@import url("./produtos.css");
+@import url("./header.css");
+@import url("./Global.css");
+@import url("./button.css");
 body 
 {
   margin: 0;
   color: #212529;
   background-color: #0c0809b4;
   display: block;
+}
+
+.ItemClienteContent
+{
+    margin-top: 80px;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #F8F9FA;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.761) 0px 3px 8px;
+}
+
+.ClientesTr td 
+{
+  padding: 2.5px;
+}
+
+.ClientesTr:first-child td
+{
+  padding-top: 10px;
+}
+
+.ClientesTr:last-child td
+{
+  padding-bottom: 10px;
+}
+
+.ClientesTr td:First-child
+{
+  padding-left: 10px;
+}
+
+.ClientesTr td:last-child
+{
+  padding-right: 10px;
+}
+
+.ItemCliente
+{
+  height: auto;
+  margin: 10px;
+  background-color: #F8F9FA;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.761) 0px 3px 8px;
+  border: 0.05px solid rgba(0, 0, 0, 0.761);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#TrTitles th:first-child
+{
+    width: 50px;
 }

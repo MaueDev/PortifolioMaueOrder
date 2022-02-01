@@ -10,7 +10,6 @@
 <body>
 <?php require_once("componentes/header.php"); ?>
 <main class="ItemProdutoContent">
-    <div class="ItemProduto">
         <table id="lista ">
             <thead>
                 <tr>
@@ -31,7 +30,7 @@
             </thead>
             <tbody id="BodyAllTd">
                 <?php while($e = $allProdutos->fetch(PDO::FETCH_ASSOC)){ ?>
-                <tr class='ClientesTr' id="<?php echo $e['id']; ?>" >
+                <tr class='ProdutosTr' id="<?php echo $e['id']; ?>" >
                     <td><?php echo $e['id']; ?></td>
                     <td><?php echo $e['Nome']; ?></td>
                     <td><?php echo $e['vr_produto']; ?></td>
@@ -39,7 +38,6 @@
                 <?php } ?>
             </tbody>
         </table>
-    </div>
 </main>
 <script src="./js/script.js"></script>
 </body>

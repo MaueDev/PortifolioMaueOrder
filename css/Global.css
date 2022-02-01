@@ -1,0 +1,69 @@
+body 
+{
+  margin: 0;
+  color: #212529;
+  background-color: #0c0809b4;
+  display: block;
+}
+
+thead
+{
+    background-color: #1c1b1b;
+    border-radius: 10px;
+    border: none;
+}
+
+table,thead,tbody
+{
+    width: 100%;
+    border-collapse:collapse;
+}
+
+th
+{
+    color: #F8F9FA;
+    font-weight: normal;
+    background-color: #1c1b1b;
+    border-bottom: solid 2px #d8d8d8;
+    position: sticky;
+    top: 0;
+
+}
+
+td,th
+{
+    text-align: left;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+input
+{
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    width: 100%;
+}
+
+.Error
+{
+    padding: 5px;
+    color: #F8F9FA;
+    background-color: crimson;
+    
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 1000;
+}
+
+.SUCESS
+{
+    padding: 5px;
+    color: #F8F9FA;
+    background-color: #008000;
+    
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 1000;
+}
