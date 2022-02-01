@@ -31,7 +31,7 @@
                         </div>
                         <div class="itemFormCreate">
                             <label For="Email">E-Mail:</label>
-                            <input type="text" name="Email" id="Email" required/>
+                            <input type="email" name="Email" id="Email" required/>
                         </div>
                         <div class="itemFormCreate">
                             <label >Data de Nascimento:</label>
