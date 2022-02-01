@@ -10,30 +10,28 @@
 <body>
     <?php require_once("componentes/header.php"); ?>
 <main class="MenuPrincipalContent">
-    <div class="itemMenuPrincipal">
-        <ul>
-            <li class="itemMenu">
-                <a href="<?php echo URL_BASE; ?>/produtos"> 
-                    <label>Produtos</label>
-                </a>
-            </li>
-            <li class="itemMenu">
-                <a href="<?php echo URL_BASE; ?>/clientes"> 
-                    <label>Clientes</label>
-                </a>
-            </li>
-            <li class="itemMenu">
-                <a href="<?php echo URL_BASE; ?>/newpedido"> 
-                    <label>Novo Pedido</label>
-                </a>
-            </li>
-            <li class="itemMenu">
-                <a href="<?php echo URL_BASE; ?>/historico"> 
-                    <label>Historico Pedido</label>
-                </a>
-            </li>
-        </ul>
-    </div>
+    <ul>
+        <li class="itemMenu">
+            <a href="<?php echo URL_BASE; ?>/produtos"> 
+                <label>Produtos</label>
+            </a>
+        </li>
+        <li class="itemMenu">
+            <a href="<?php echo URL_BASE; ?>/clientes"> 
+                <label>Clientes</label>
+            </a>
+        </li>
+        <li class="itemMenu">
+            <a href="<?php echo URL_BASE; ?>/newpedido"> 
+                <label>Novo Pedido</label>
+            </a>
+        </li>
+        <li class="itemMenu">
+            <a href="<?php echo URL_BASE; ?>/historico"> 
+                <label>Historico Pedido</label>
+            </a>
+        </li>
+    </ul>
 </main>
 </body>
 </html>

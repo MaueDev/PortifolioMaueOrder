@@ -134,6 +134,7 @@
     position: fixed;
     top:35.5%; left: 35.5%;
     z-index: 10005;
+    overflow: hidden;
 
     background-color: white;
     border-radius: 10px;
@@ -143,17 +144,40 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
 
+    min-height: 180px;
     width: 25%;
     height: 25%;
+    padding: 15px;
 }
 
 .btnIniciarVenda
 {
+    font-family: sans-serif;
+    font-size: 1rem;
+    overflow: auto;
+	box-sizing: border-box;
+    color: white  !important;
+    height: 45%;
+}
+
+.btnIniciarVenda:hover
+{
+    opacity: 0.9;
+}
+
+.btnVenda
+{
     padding: 20px;
     width: 80%;
-
     font-family: sans-serif;
+}
+
+.btnVenda:hover
+{
+    opacity: 0.9;
 }
 
 .ListClienteModal

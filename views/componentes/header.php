@@ -9,6 +9,7 @@
             <li><a href="<?php echo URL_BASE; ?>/clientes">Clientes </a></li>
             <li><a href="<?php echo URL_BASE; ?>/newpedido">Novo Pedido</a></li>
             <li><a href="<?php echo URL_BASE; ?>/historico">Historico Pedido</a></li>
+            <li><a href="<?php echo URL_BASE; ?>/sair">Sair</a></li>
         </ul>
     </nav>
 </header>

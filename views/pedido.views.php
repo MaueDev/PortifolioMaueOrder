@@ -25,7 +25,7 @@
                                 Mauricio Rodrigues
                             </th>
                             <th>
-                                <button class="btn btnIniciarVenda"> Cliente </button>
+                                <button class="btn btnVenda"> Cliente </button>
                             </th>
                         </tr>
                         <tr>
@@ -55,7 +55,7 @@
                             <th>Valor</th>
                             <th></th>
                             <th></th>
-                            <th><button class="btn green btnIniciarVenda"/>Concluir Venda</th>
+                            <th><button class="btn green btnVenda"/>Concluir Venda</th>
                         </tr>
                     </tfoot>
                 </table>
@@ -94,7 +94,8 @@
             <form action="" method="POST">
             <div class="bodyAllPedidos">
                     <input type="hidden"  name="NewVenda" value="true"/>
-                    <button class="btnIniciarVenda btn red">Iniciar Vendas</button>
+                    <button class="btnIniciarVenda btn red ">Iniciar Venda</button>
+                    <a href="./home" class="btnIniciarVenda btn green"> Cancelar </a>
             </div>
             </form>
         </div>
