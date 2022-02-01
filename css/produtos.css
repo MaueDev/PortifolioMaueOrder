@@ -1,20 +1,19 @@
 @import url("./header.css");
 @import url("./button.css");
 @import url("./modal.css");
-body 
-{
-  margin: 0;
-  color: #212529;
-  background-color: #0c0809b4;
-  display: block;
-}
-.ItemProdutoContent,.ItemClienteContent
+@import url("./Global.css");
+
+.ItemProdutoContent
 {
     margin-top: 80px;
-    border-radius: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #F8F9FA;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.761) 0px 3px 8px;
 }
 
-.ItemProduto, .ItemCliente
+.ItemProduto
 {
   height: auto;
   margin: 10px;
@@ -26,63 +25,6 @@ body
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.ItemCliente table, .ItemProduto table
-{
-    margin: 10px;
-    font-size: 16px;
-    border-collapse: collapse;
-    font-family: "Open Sans", sans-serif;
-}
-
-thead
-{
-    background-color: #1c1b1b;
-    border-radius: 10px;
-    border: none;
-}
-
-table,thead,tbody
-{
-    width: 100%;
-    border-collapse:collapse;
-}
-
-th
-{
-    color: #F8F9FA;
-    font-weight: normal;
-    background-color: #1c1b1b;
-    border-bottom: solid 2px #d8d8d8;
-    position: sticky;
-    top: 0;
-
-}
-
-td,th
-{
-    text-align: left;
-    padding: 15px;
-    box-sizing: border-box;
-}
-
-.PesquisaProdutoContent, .PesquisaClienteContent
-{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-}
-
-input
-{
-    height: 30px;
-    border-radius: 5px;
-    border: none;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-    width: 100%;
 }
 
 #FormCadastroProduto
@@ -102,12 +44,6 @@ input
 .itemForm:nth-child(2)
 {
     width: 80px;
-}
-
-
-#TrTitles th:first-child
-{
-    width: 50px;
 }
 
 
@@ -224,24 +160,3 @@ input
     margin: 3px;
 }
 
-.Error
-{
-    padding: 5px;
-    color: #F8F9FA;
-    background-color: crimson;
-    
-    text-align: center;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 1000;
-}
-
-.SUCESS
-{
-    padding: 5px;
-    color: #F8F9FA;
-    background-color: #008000;
-    
-    text-align: center;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 1000;
-}

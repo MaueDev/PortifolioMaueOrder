@@ -9,7 +9,7 @@
 </head>
 <body>
 <?php require_once("componentes/header.php"); ?>
-    <div class="CreateContent">
+    <div class="HistoricoContent">
         <table>
             <thead>
                 <tr>
@@ -25,7 +25,7 @@
                 <?php
                 foreach ($Pedido as $chave) 
                 {?>
-                    <tr>
+                    <tr class="TrHistorico">
                         <td><?php echo $chave['id']?></td>
                         <td><?php echo $chave['Nome']?></td>
                         <td><?php echo $chave['VrPedido']?></td>
@@ -33,11 +33,11 @@
                         <td><?php echo $chave['DataInicioPedido']?></td>
                         <?php if($chave['Status'] == 1)
                         {
-                            echo "<td class=''><a href=''> FINALIZADO</a></td>";
+                            echo "<td class=''><a class=\"FinalizadoPedido\" href=''> FINALIZADO</a></td>";
                         }
                         else
                         {
-                            echo "<td class=''><a href='".URL_BASE."/newpedido/".$chave['id']."'> AGUARDO</a> </td>";
+                            echo "<td class=''><a class=\"AguardoPedido\" href='".URL_BASE."/newpedido/".$chave['id']."'> AGUARDO</a> </td>";
                         }
                         ?>
                     </tr>

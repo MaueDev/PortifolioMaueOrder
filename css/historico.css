@@ -1,1 +1,54 @@
-@import url("./produtos.css");
+@import url("./header.css");
+@import url("./Global.css");
+@import url("./button.css");
+
+.HistoricoContent
+{
+    margin-top: 80px;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #F8F9FA;
+    border-radius: 10px;   
+    box-shadow: rgba(0, 0, 0, 0.761) 0px 3px 8px;
+}
+
+.FinalizadoPedido
+{
+    background: green;
+    color: white !important;
+    padding: 5px;
+}
+
+.AguardoPedido
+{
+    background: #FED700;
+    color: white !important;
+    padding: 5px;
+}
+
+.TrHistorico td
+{
+    padding: 0;
+    
+}
+
+.TrHistorico td:first-child
+{
+    padding-left: 10px;
+    
+}
+
+.TrHistorico td:last-child
+{
+    padding-right: 10px;
+    
+}
+.TrHistorico:last-child td
+{
+    padding-bottom: 10px;
+}
+
+.TrHistorico:first-child td
+{
+    padding-top: 10px;
+}
