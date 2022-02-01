@@ -2,8 +2,6 @@
 
 namespace Source\App;
 
-use DbConnect;
-use PDOException;
 use Source\DataBaseClass\produtos;
 use Source\DataBaseClass\cliente;
 use CoffeeCode\Router\Router;
@@ -21,73 +19,17 @@ class Web
         $router = new Router(URL_BASE);
         $router->redirect($Link);
     }
-
-    public function login($data)
-    {
-        if(isset($_SESSION["LOGADO"]) and $_SESSION["LOGADO"] == TOKEN)
-        {
-            $this->to('/home');    
-        }
-        if(isset($data["erro"]))
-        {
-            echo "<div class=\"Error\"><small>".$data["erro"]."</small></div> ";
-            $data = null;
-        }
-        require (dirname(1)."/views/login.php");
-    }
-
-    public function logar($data)
-    {
-       
-        if(isset($_SESSION["LOGADO"]) and $_SESSION["LOGADO"] == TOKEN)
-        {
-            $this->to('/home');    
-        }
-        if(!empty($data))
-        {
-            try
-            {
-                $Con = new DbConnect();
-                $Con = $Con->ReturnCon();
-                $SQL = "select id from _login where user = ? and password = ?";
-                $query = $Con->prepare($SQL);
-                $query->bindValue(1, $data["User"]);
-                $query->bindValue(2, md5($data["Password"]));
-                $query->execute();
-                if($query->rowCount() > 0)
-                {
-                    $_SESSION["LOGADO"] = TOKEN;
-                    header("Location: ./home");
-                    die();
-                }
-                else
-                {
-                    $data = ["erro" => "Usuario ou Senha não encontrado."];
-                    $this->login($data);
-                }
-            }
-            catch(PDOException $e)
-            {
-                $data = ["erro" => $e->getMessage()];
-                $this->login($data);
-            }
-        }
-        else
-        {
-            $data = ["erro" => "Preencha os dados"];
-            $this->login($data);
-        }
-    }
-
     public function home($data)
     {
         if(isset($_SESSION["LOGADO"]) and $_SESSION["LOGADO"] == TOKEN)
         {
-            require (dirname(1)."/views/home.php");
+            require (dirname(1)."/views/home.views.php");
         }
     }
 
-    public function produtos($data)
+    /*Produtos */
+
+    public function Produtos($data)
     {
         if(isset($_SESSION["LOGADO"]) and $_SESSION["LOGADO"] == TOKEN)
         {
@@ -98,11 +40,11 @@ class Web
             }
             $Produtos = new produtos;
             $allProdutos = $Produtos->all();
-            require (dirname(1)."/views/produtos.php");
+            require (dirname(1)."/views/produtos..views.php");
         }
     }
 
-    public function produtoscriar($data)
+    public function ProdutosCriar($data)
     {
         if(isset($_SESSION["LOGADO"]) and $_SESSION["LOGADO"] == TOKEN)
         {   
@@ -112,24 +54,20 @@ class Web
                 echo "<div class=\"Error\" style=\"margin-top:70px\"><small>".$data["ERRO"]."</small></div> ";
                 $data = "";
             }
-
-
-            require (dirname(1)."/views/produtoscriar.php");
+            require (dirname(1)."/views/produtoscriar.views.php");
         }
     }
 
-    public function sendprodutos($data)
+    public function SendProdutos($data)
     {
         if(isset($_SESSION["LOGADO"]) and $_SESSION["LOGADO"] == TOKEN)
         { 
             if(!empty($data))
             {
-                
                 $Produtos = new produtos;
                 $allProdutos = $Produtos->create($data["nome"],$data["vr_produto"]);
                 if(!isset($allProdutos["ERRO"]) and isset($allProdutos['SUCESS']))
                 {
-                    
                     $this->to("/produtos");
                 }
                 else
@@ -140,36 +78,37 @@ class Web
         }
     }
 
-    public function clientes($data)
+    /*Cliente */
+
+    public function Clientes($data)
     {
         if (isset($_SESSION["LOGADO"]) and $_SESSION["LOGADO"] == TOKEN) 
         {
             $Cliente = new cliente;
             $Clientes = $Cliente->all();
-            require (dirname(1)."/views/clientes.php");
+            require (dirname(1)."/views/clientes.views.php");
         }
     }
 
-    public function buscarclientes($data)
+    public function BuscarClientes($data)
     {
         if (isset($_SESSION["LOGADO"]) and $_SESSION["LOGADO"] == TOKEN) 
         {
             $FindCliente = new cliente;
             $Cliente = $FindCliente->FindCliente($data["id"]);
-            require (dirname(1)."/views/buscarclientes.php");
+            require (dirname(1)."/views/buscarclientes.views.php");
         }
     }
 
-    public function criarclientes($data)
+    public function CriarClientes($data)
     {
         if (isset($_SESSION["LOGADO"]) and $_SESSION["LOGADO"] == TOKEN) 
         {
-
-                require (dirname(1)."/views/createCliente.php");
+                require (dirname(1)."/views/createCliente.views.php");
         }
     }
 
-    public function sendclientes($data)
+    public function SendClientes($data)
     {
         if (isset($_SESSION["LOGADO"]) and $_SESSION["LOGADO"] == TOKEN) 
         {
@@ -185,7 +124,6 @@ class Web
                 elseif(!isset($NewCliente["ERROR"]) and isset($NewCliente['SUCESS']))
                 {
                     echo "<div class=\"SUCESS\" style=\"margin-top:70px\"><small>".$NewCliente['SUCESS']."</small></div> ";
-                    
                     $this->to("/clientes");
                 }
             }
@@ -197,7 +135,9 @@ class Web
         } 
     }
 
-    public function novopedido($data)
+    /*Clientes */
+
+    public function NovoPedido($data)
     {
         if (isset($_SESSION["LOGADO"]) and $_SESSION["LOGADO"] == TOKEN) 
         {
@@ -209,16 +149,14 @@ class Web
                 $Pedido = $Pedido->create();
                 $this->to("/newpedido/".$Pedido['id']);
             }
-  
-            require (dirname(1)."/views/pedido.php");
+            require (dirname(1)."/views/pedido.views.php");
         }
     }
 
-    public function aguardopedido($data)
+    public function AguardoPedido($data)
     {
         if (isset($_SESSION["LOGADO"]) and $_SESSION["LOGADO"] == TOKEN) 
         {
-            
             if(isset($data['id']))
             {
                 /*Iniciar Pedido*/
@@ -235,24 +173,22 @@ class Web
                 /*Buscar Cliente */
                 $Clientes = new cliente;
                 $Clientes = $Clientes->all();
-            require (dirname(1)."/views/pedidoiniciada.php");
+            require (dirname(1)."/views/pedidoiniciada.views.php");
             }
             else
             {
-                
                 $this->to("/newpedido");
             }
         }
     }
 
-    public function setpedidos($data)
+    public function SetPedidos($data)
     {
         if (isset($_SESSION["LOGADO"]) and $_SESSION["LOGADO"] == TOKEN) 
         {
             $Pedido = new pedidos;
             if(isset($data['cliente']))
             {
-                
                 $Pedido = $Pedido->SetClient($data['cliente'],$data["id"]);
                 if($Pedido)
                 {
@@ -272,7 +208,6 @@ class Web
                 $Pedido = $Pedido->FinalizeOrder($data['id']);
                 if($Pedido)
                 {
-                    
                     $this->to("/historico");
                 }
             }
@@ -283,7 +218,7 @@ class Web
         }
     }
     
-    public function historico($data)
+    public function Historico($data)
     {
         if(isset($_SESSION["LOGADO"]) and $_SESSION["LOGADO"] == TOKEN)
         {   
@@ -298,10 +233,9 @@ class Web
                 echo "<div class=\"SUCESS\" style=\"margin-top:70px\"><small>".$data["SUCESS"]."</small></div> ";
                 $data = "";
             }
-
             $Pedido = new pedidos;
             $Pedido = $Pedido->all();
-            require (dirname(1)."/views/historicovenda.php");
+            require (dirname(1)."/views/historicovenda.views.php");
         }
     }
 }
