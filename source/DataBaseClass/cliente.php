@@ -85,12 +85,12 @@ class cliente extends DbConnect
             }
             else
             {
-                return "ERROR: Cliente não encontrado";
+                return ["ERROR" => "Cliente não encontrado"];
             }
         }
         catch(PDOException $e)
         {
-            return "Error: ".$e->getMessage();
+            return ["ERROR:" => $e->getMessage()];
         }
     }
 

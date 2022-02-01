@@ -23,3 +23,12 @@ function IsLoggedIn($location)
         $router->redirect($location); 
     }
 }
+
+function IsNotLoggedIn()
+{
+    if(!isset($_SESSION["LOGADO"]) and $_SESSION["LOGADO"] != TOKEN)
+    {
+        $router = new Router(URL_BASE);
+        $router->redirect("/"); 
+    }
+}

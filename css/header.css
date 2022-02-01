@@ -45,6 +45,13 @@ ul a:hover
     border: 0.05px solid rgba(0, 0, 0, 0.761);
 }
 
+.ErrorOrSuccess
+{
+    position: fixed;
+    top: 70px;
+    width: 100%;
+}
+
 #header a
 {
     color: black !important
