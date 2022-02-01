@@ -63,7 +63,6 @@
     display: block;
     overflow-y: scroll;
     background-color: white;
-    
 }
 
 .produtospdv tbody
@@ -154,9 +153,7 @@
     padding: 20px;
     width: 80%;
 
-
     font-family: sans-serif;
-
 }
 
 .ListClienteModal

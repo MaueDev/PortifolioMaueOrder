@@ -18,24 +18,24 @@ $router->get("/sair","Auth:Logoff");
 $router->get("/home","Web:home");
 
 //PRODUTOS
-$router->get("/produtos","Produto:Produtos");
-$router->get("/produtos/criar","Produto:ProdutosCriar");
-$router->post("/produtos/criar","Produto:SendProdutos");
+$router->get("/produtos","Web:Produtos");
+$router->get("/produtos/criar","Web:ProdutosCriar");
+$router->post("/produtos/criar","Web:SendProdutos");
 
 //CLIENTES
-$router->get("/clientes/{id}","Web:buscarclientes");
-$router->get("/clientes","Web:clientes");
-$router->get("/clientes/create","Web:criarclientes");
-$router->post("/clientes/create","Web:sendclientes");
+$router->get("/clientes/{id}","Web:BuscarClientes");
+$router->get("/clientes","Web:Clientes");
+$router->get("/clientes/create","Web:CriarClientes");
+$router->post("/clientes/create","Web:SendClientes");
 
 //PEDIDO
 $router->get("/newpedido/{id}","Web:aguardopedido");
-$router->get("/newpedido","Web:novopedido");
-$router->post("/newpedido/{id}","Web:setpedidos");
-$router->post("/newpedido","Web:novopedido");
+$router->get("/newpedido","Web:NovoPedido");
+$router->post("/newpedido/{id}","Web:SetPedidos");
+$router->post("/newpedido","Web:NovoPedido");
 
 //HISTORICO
-$router->get("/historico","Web:historico");
+$router->get("/historico","Web:Historico");
 
 
 $router->dispatch();

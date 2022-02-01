@@ -1,5 +1,4 @@
 <?php
-
 namespace Source\App;
 
 use CoffeeCode\Router\Router;
@@ -30,12 +29,11 @@ class Auth
             echo "<div class=\"Error\"><small>".$data["erro"]."</small></div> ";
             $data = null;
         }
-        require (dirname(1)."/views/login.php");
+        require (dirname(1)."/views/login.views.php");
     }
 
     public function Logar($data)
     {
-       
         if(isset($_SESSION["LOGADO"]) and $_SESSION["LOGADO"] == TOKEN)
         {
             $this->to('/home');    
