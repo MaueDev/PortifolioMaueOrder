@@ -81,10 +81,6 @@ ul a:hover
     color: black !important
 }
 
-.ActiveBtnMenu
-{
-    color: black !important
-}
 
 @media(max-width:708px)
 {

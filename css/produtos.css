@@ -51,7 +51,7 @@ table,thead,tbody
 
 th
 {
-    color: #ffffff;
+    color: #F8F9FA;
     font-weight: normal;
     background-color: #1c1b1b;
     border-bottom: solid 2px #d8d8d8;
@@ -118,7 +118,7 @@ input
     margin-top: 80px;
     display: flex;
     flex-wrap: wrap;
-    background-color: white;
+    background-color: #F8F9FA;
     border-radius: 10px;   
 }
 
@@ -144,7 +144,7 @@ input
 
 .Createbody
 {
-    background-color: #fff;
+    background-color: #F8F9FA;
     box-shadow: rgba(0, 0, 0, 0.035) 0px 3px 8px;
     
     font-size: 1rem;
@@ -210,12 +210,12 @@ input
 {
     width: 100%;
     display: flex;
-    background-color: white;
+    background-color: #F8F9FA;
 }
 
 .BtnCreate
 {
-    color: #fff !important;
+    color: #F8F9FA !important;
     padding: 10px;
     font-size: 1rem;
     font-family: sans-serif;
@@ -227,7 +227,7 @@ input
 .Error
 {
     padding: 5px;
-    color: white;
+    color: #F8F9FA;
     background-color: crimson;
     
     text-align: center;
@@ -238,7 +238,7 @@ input
 .SUCESS
 {
     padding: 5px;
-    color: white;
+    color: #F8F9FA;
     background-color: #008000;
     
     text-align: center;

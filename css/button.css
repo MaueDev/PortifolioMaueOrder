@@ -19,8 +19,8 @@
 
 .white
 {
-    background-color: #fff;
-    border: 0.05px solid #fff;
+    background-color: #F8F9FA;
+    border: 0.05px solid #F8F9FA;
     border-radius: 5px;
 }
 
@@ -29,7 +29,7 @@
     background-color: #ed233d;
     border: 0.05px solid #ed233d;
     border-radius: 5px;
-    color: #fff;
+    color: #F8F9FA;
 }
 
 .green
@@ -37,12 +37,12 @@
     background-color: #008000;
     border: 0.05px solid #008000;
     border-radius: 5px;
-    color: #fff;
+    color: #F8F9FA;
 }
 
 .btnIconWhite
 {
-    color: white;
+    color: #F8F9FA;
     background:transparent;
     border: none;
     font-size: 30px;
