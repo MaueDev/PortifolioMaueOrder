@@ -2,12 +2,28 @@
 
 #### Rotas a ser definida na pagina index.php. 
 #### Controller caminho:  source/App/Web.php 
-&nbsp; 
+&nbsp;
+
+</br>
+
 ## To do List
-
-
+&nbsp;
 * Layout
   * Aprimorar layout
   * Adicionar variavel das cores no css;
+  
+</br>
+
+
 * Requisição
   * Alterar as requisição para AJAX ou FETCH em * JavaScript
+
+</br>
+
+  * Regras de Negocio
+    *  Pedido
+       - Não deixar finalizar venda sem produto
+       - Não deixar finalizar venda sem cliente
+       - Colocar aviso de sair da tela
+       - Caso sair da tela de pedidos e a venda não possuir item  excluir a venda automaticamente 
+       - 
