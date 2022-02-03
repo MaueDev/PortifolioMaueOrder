@@ -50,7 +50,6 @@ class pedidos extends DbConnect
                 $Produtos = $this->FindMovProd($Pedidos['id']);
                 $Pedidos['Produtos'] = $Produtos;
                 $Pedido[] = $Pedidos;
-
             }
             return  $Pedido;
         }
@@ -158,24 +157,33 @@ class pedidos extends DbConnect
     {
         if(isset($idVenda))
         {
-            try
+            //Verificar se possui Cliente setado
+            $Venda = $this->FindVenda($idVenda);
+            if (isset($Venda['idCliente']) and is_null($Venda['idCliente'])) 
             {
+                return ['ERROR' => "Defina um cliente antes de finalizar a venda."];
+                die();
+            }
+
+            //Verificar se tem Produto na venda
+            $ProdutoNaVenda = $this->FindMovProd($idVenda);
+            if (!isset($ProdutoNaVenda) and is_null($ProdutoNaVenda)) 
+            {
+                return ['ERROR' => "Venda não possui produtos."];
+                die();
+            }
+
+            try {
                 $SQL = "UPDATE _cad_Pedidos SET Status = 1, DataConclusao = ? WHERE id = ?";
                 $Query = $this->ReturnCon()->prepare($SQL);
                 $Query->bindValue(1, $this->DataCurrent());
                 $Query->bindValue(2, $idVenda);
-                if($Query->execute())
-                {
+                if ($Query->execute()) {
                     return true;
-                }
-                else
-                {
+                } else {
                     return false;
                 }
-
-            }
-            catch(PDOException $e)
-            {
+            } catch (PDOException $e) {
                 return false;
             }
         }
@@ -233,7 +241,6 @@ class pedidos extends DbConnect
             $Query = $this->ReturnCon()->prepare($SQL);
             $Query->bindValue(1, $idVenda);
             $Query->execute();
-    
             $Dados = [];
             while($Dado = $Query->fetch(PDO::FETCH_ASSOC))
             {

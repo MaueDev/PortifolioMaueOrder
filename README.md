@@ -22,8 +22,6 @@
 
   * Regras de Negocio
     *  Pedido
-       - Não deixar finalizar venda sem produto
-       - Não deixar finalizar venda sem cliente
        - Colocar aviso de sair da tela
        - Caso sair da tela de pedidos e a venda não possuir item  excluir a venda automaticamente 
        - 
