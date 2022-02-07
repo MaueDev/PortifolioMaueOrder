@@ -5,7 +5,12 @@
 &nbsp;
 
 </br>
+
 ## Projeto em Produção
+
+</br>
+
+![IMAGE](https://github.com/MaueDev/PortifolioMaueOrder/blob/main/Demo/videodemo.gif?raw=true)
 
 </br>
 
@@ -19,6 +24,4 @@
 
 
 * Requisição
-  * Alterar as requisição para AJAX ou FETCH em * JavaScript
-
-</br
+  * Alterar as requisição para AJAX ou FETCH em JavaScript
