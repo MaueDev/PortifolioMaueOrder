@@ -5,6 +5,9 @@
 &nbsp;
 
 </br>
+## Projeto em Produção
+
+</br>
 
 ## To do List
 &nbsp;
@@ -18,10 +21,4 @@
 * Requisição
   * Alterar as requisição para AJAX ou FETCH em * JavaScript
 
-</br>
-
-  * Regras de Negocio
-    *  Pedido
-       - Colocar aviso de sair da tela
-       - Caso sair da tela de pedidos e a venda não possuir item  excluir a venda automaticamente 
-       - 
+</br
