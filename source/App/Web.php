@@ -132,6 +132,7 @@ class Web
             {
                 $this->to("/newpedido");
             }
+
             /*Buscar Produtos*/
             $Produtos = new produtos;
             $Produtos = $Produtos->all();
@@ -140,6 +141,7 @@ class Web
             $Clientes = new cliente;
             $Clientes = $Clientes->all();
             $STATUS = ErrorOrSuccess($data);
+            echo $STATUS;
             require (dirname(1)."/views/pedidoiniciada.views.php");
         }
         else
@@ -170,9 +172,14 @@ class Web
         elseif(isset($data['FinalizarVenda']))
         {
             $Pedido = $Pedido->FinalizeOrder($data['id']);
-            if($Pedido)
+            if($Pedido and !isset($Pedido['ERROR']))
             {
                 $this->to("/historico");
+            }
+            else
+            {
+                $Pedido['id'] = $data['id'];
+                $this->aguardopedido($Pedido);
             }
         }
         else

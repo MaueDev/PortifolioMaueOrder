@@ -14,4 +14,4 @@
     </nav>
     
 </header>
-<div class="ErrorOrSuccess"><?php echo isset($STATUS)?$STATUS:null; ?></div>
+<div class="ErrorOrSuccess"><?php echo $STATUS ?></div>
